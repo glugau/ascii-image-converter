@@ -72,7 +72,7 @@ def threaded_generate(lst, startindex):
                 chars = CHARACTERS_DARKMODE
             else:
                 chars = CHARACTERS_LIGHTMODE
-            index = round(val * (len(chars)))
+            index = round(val * (len(chars) - 1))
             result += chars[index]
         output_lines[curr] = result
         curr += 1
