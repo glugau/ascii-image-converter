@@ -1,4 +1,5 @@
 from PIL import Image
+import time
 import sys
 import threading
 import imghdr
@@ -9,6 +10,8 @@ CHARACTERS_LIGHTMODE = "@%#*+=-:. "
 CHARACTERS_DARKMODE = " .:-=+*#%@"
 DARKMODE = True
 THREAD_COUNT = 12
+
+start_time = time.time()
 
 im_dimensions = [None, None]
 
@@ -92,3 +95,5 @@ for thread in threads:
 output_string = "\n".join(output_lines)
 with open(OUTPUT_PATH, "w+") as f:
     f.write(output_string)
+
+print(f"Finished in {time.time() - start_time} seconds.")
